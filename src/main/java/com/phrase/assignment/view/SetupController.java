@@ -15,7 +15,7 @@ public class SetupController {
     }
 
     @PostMapping
-    public ResponseEntity<String> login(User user) {
+    public ResponseEntity<String> login(@RequestBody User user) {
         try {
             String token = loginService.login(user);
             return new ResponseEntity<>(token, HttpStatus.OK);

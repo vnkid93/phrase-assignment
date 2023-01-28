@@ -1,6 +1,6 @@
 package com.phrase.assignment.service.impl;
 
-import com.phrase.assignment.backend.PhraseBackendLoginService;
+import com.phrase.assignment.backend.PhraseLoginService;
 import com.phrase.assignment.backend.model.UserLoginRequest;
 import com.phrase.assignment.service.LoginService;
 import com.phrase.assignment.service.model.User;
@@ -15,9 +15,9 @@ import java.util.Optional;
 public class LoginServiceImpl implements LoginService {
     private static final Logger logger = LoggerFactory.getLogger(LoginServiceImpl.class);
     private final UserRepository userRepository;
-    private final PhraseBackendLoginService phraseBackendLoginService;
+    private final PhraseLoginService phraseBackendLoginService;
 
-    public LoginServiceImpl(UserRepository userRepository, PhraseBackendLoginService phraseBackendLoginService) {
+    public LoginServiceImpl(UserRepository userRepository, PhraseLoginService phraseBackendLoginService) {
         this.userRepository = userRepository;
         this.phraseBackendLoginService = phraseBackendLoginService;
     }

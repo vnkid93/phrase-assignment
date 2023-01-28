@@ -1,7 +1,9 @@
 package com.phrase.assignment.backend.config;
 
-import com.phrase.assignment.backend.PhraseBackendLoginService;
-import com.phrase.assignment.backend.impl.PhraseBackendLoginServiceImpl;
+import com.phrase.assignment.backend.PhraseLoginService;
+import com.phrase.assignment.backend.PhraseProjectService;
+import com.phrase.assignment.backend.impl.PhraseLoginServiceImpl;
+import com.phrase.assignment.backend.impl.PhraseProjectServiceImpl;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +20,13 @@ public class PhraseClientConfig {
     }
 
     @Bean
-    public PhraseBackendLoginService getPhraseBackendLoginService() {
-        return new PhraseBackendLoginServiceImpl(template, PHRASE_URL);
+    public PhraseLoginService getPhraseBackendLoginService() {
+        return new PhraseLoginServiceImpl(template, PHRASE_URL);
+    }
+
+    @Bean
+    public PhraseProjectService getPhraseProjectService() {
+        return new PhraseProjectServiceImpl(template, PHRASE_URL);
     }
 
 }

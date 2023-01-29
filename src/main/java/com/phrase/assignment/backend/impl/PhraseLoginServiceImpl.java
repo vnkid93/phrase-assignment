@@ -18,6 +18,6 @@ public class PhraseLoginServiceImpl extends PhraseRestAbstractService implements
     @Override
     public Optional<String> getUserToken(UserLoginRequest request) {
         UserLoginResponse userLogin = template.postForObject(url + ACTION, request, UserLoginResponse.class);
-        return Optional.of(userLogin.getToken());
+        return Optional.ofNullable(userLogin.getToken());
     }
 }

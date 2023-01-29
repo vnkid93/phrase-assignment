@@ -9,6 +9,7 @@ public class ProjectResponse {
     private String name;
     private String sourceLang;
     private List<String> targetLangs;
+    private String status;
 
     public ProjectResponse() {
         // empty on purpose
@@ -54,6 +55,14 @@ public class ProjectResponse {
         this.targetLangs = targetLangs;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", ProjectResponse.class.getSimpleName() + "[", "]")
@@ -62,6 +71,7 @@ public class ProjectResponse {
                 .add("name='" + name + "'")
                 .add("sourceLang='" + sourceLang + "'")
                 .add("targetLangs=" + targetLangs)
+                .add("status='" + status + "'")
                 .toString();
     }
 }
